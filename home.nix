@@ -130,7 +130,11 @@
     enable = true;
     userEmail = "16237377+danbluhmhansen@users.noreply.github.com";
     userName = "Dan Bluhm Hansen";
-    extraConfig.init.defaultBranch = "main";
+    extraConfig = {
+      diff.algorithm = "histogram";
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+    };
     delta = {
       enable = true;
       options = {
