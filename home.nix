@@ -22,16 +22,11 @@
     pkgs.sd
     pkgs.xh
 
-    pkgs.usql
-
     pkgs.streamlink
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage plain files is through 'home.file'.
   home.file = {
-    ".usqlrc".text = ''
-      \set PAGER 'bat --wrap=never'
-    '';
     ".config/streamlink/config".text = ''
       player=mpv
       default-stream=best
@@ -162,9 +157,6 @@
 
   programs.zellij = {
     enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-    enableZshIntegration = true;
     settings.default_shell = "nu";
     settings.default_layout = "compact";
     settings.theme = "catppuccin-mocha";
