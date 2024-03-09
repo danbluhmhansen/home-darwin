@@ -23,6 +23,11 @@
     pkgs.xh
 
     pkgs.streamlink
+
+    pkgs.openssh
+    pkgs.libfido2
+
+    pkgs.ripasso-cursive
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage plain files is through 'home.file'.
@@ -125,6 +130,10 @@
     enable = true;
     userEmail = "16237377+danbluhmhansen@users.noreply.github.com";
     userName = "Dan Bluhm Hansen";
+    signing = {
+      key = "0xD8556C15D6FC9295";
+      signByDefault = true;
+    };
     extraConfig = {
       diff.algorithm = "histogram";
       init.defaultBranch = "main";
@@ -177,4 +186,17 @@
   };
 
   programs.yt-dlp.enable = true;
+
+  programs.gpg = {
+    enable = true;
+    publicKeys = [
+      {
+        source = pkgs.fetchurl {
+          url = "https://keys.openpgp.org/vks/v1/by-fingerprint/80331B7032DF190DEE56FC9AD8556C15D6FC9295";
+          sha256 = "npzXiqoP+Kk82mlxurn6JJtXyL3KQ2u0eNoYKLyftdQ=";
+        };
+        trust = 5;
+      }
+    ];
+  };
 }

@@ -43,6 +43,12 @@
         space.x = ":buffer-close";
         space.q = ":quit";
         space.l = ":format";
+        C-h = ":toggle lsp.display-inlay-hints";
+      };
+
+      keys.select = {
+        H = "goto_first_nonwhitespace";
+        L = "goto_line_end";
       };
     };
 
