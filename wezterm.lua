@@ -12,18 +12,6 @@ return {
   native_macos_fullscreen_mode = true,
   window_close_confirmation = 'NeverPrompt',
 
-  default_prog = { '/etc/profiles/per-user/danbluhmhansen/bin/zsh', '-c', 'nu' },
-
-  launch_menu = {
-    { label = 'nu', args = { '/etc/profiles/per-user/danbluhmhansen/bin/zsh', '-c', 'nu' } },
-    { label = 'btm', args = { '/etc/profiles/per-user/danbluhmhansen/bin/zsh', '-c', 'btm' } },
-    { label = 'gitui', args = { '/etc/profiles/per-user/danbluhmhansen/bin/zsh', '-c', 'gitui' } },
-    { label = 'zellij', args = { '/etc/profiles/per-user/danbluhmhansen/bin/zsh', '-c', 'zellij' } },
-    { label = 'git diff', args = { '/etc/profiles/per-user/danbluhmhansen/bin/zsh', '-c', 'git diff' } },
-    { label = 'git diff --staged', args = { '/etc/profiles/per-user/danbluhmhansen/bin/zsh', '-c', 'git diff --staged' } },
-    { label = 'devenv up', args = { '/etc/profiles/per-user/danbluhmhansen/bin/zsh', '-c', 'devenv up' } },
-  },
-
   keys = {
     { key = 'Tab',        mods = 'CTRL',                     action = act.ActivateTabRelative(1) },
     { key = 'Tab',        mods = 'SHIFT|CTRL',               action = act.ActivateTabRelative(-1) },

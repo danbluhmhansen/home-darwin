@@ -26,8 +26,10 @@
           nixpkgs.overlays = [ nixpkgs-firefox-darwin.overlay ];
           home-manager.users.danbluhmhansen.imports = [
             ./home.nix
+            ./zellij.nix
             ./firefox.nix
             ./helix.nix
+            ./gpg.nix
             nur.hmModules.nur
             stylix.homeManagerModules.stylix
           ];
