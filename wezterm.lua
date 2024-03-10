@@ -11,6 +11,12 @@ return {
   font_size = 16.0,
   native_macos_fullscreen_mode = true,
   window_close_confirmation = 'NeverPrompt',
+  window_padding = {
+    left = 6,
+    right = 0,
+    top = 8,
+    bottom = 0,
+  },
 
   keys = {
     { key = 'Tab',        mods = 'CTRL',                     action = act.ActivateTabRelative(1) },
@@ -114,7 +120,7 @@ return {
     { key = 'h',          mods = 'SUPER',                    action = act.HideApplication },
     { key = 'k',          mods = 'SHIFT|CTRL',               action = act.ClearScrollback 'ScrollbackAndViewport' },
     { key = 'k',          mods = 'SUPER',                    action = act.ClearScrollback 'ScrollbackAndViewport' },
-    { key = 'l',          mods = 'ALT',                      action = act.ShowLauncher },
+    { key = 'l',          mods = 'SHIFT|ALT',                      action = act.ShowLauncher },
     { key = 'l',          mods = 'SHIFT|CTRL',               action = act.ShowDebugOverlay },
     { key = 'm',          mods = 'SHIFT|CTRL',               action = act.Hide },
     { key = 'm',          mods = 'SUPER',                    action = act.Hide },

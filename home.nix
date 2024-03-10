@@ -78,9 +78,6 @@
       use ${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/catppuccin-mocha.nu
       $env.config.color_config = (catppuccin-mocha)
 
-      register ${pkgs.nushellPlugins.gstat}/bin/nu_plugin_gstat
-      register ${pkgs.nushellPlugins.net}/bin/nu_plugin_net
-
       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/btm/btm-completions.nu
       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu
       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/gh/gh-completions.nu

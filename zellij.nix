@@ -8,9 +8,13 @@
       default_shell = "nu";
       default_layout = "compact";
       theme = "catppuccin-mocha";
+      pane_frames = false;
 	    keybinds = {
         normal = {
           "unbind \"Ctrl o\"" = [];
+          "unbind \"Ctrl t\"" = [];
+          "unbind \"Ctrl p\"" = [];
+          "unbind \"Ctrl s\"" = [];
         };
         locked = {
           "bind \"Ctrl g\"" = { SwitchToMode = "Normal"; };
@@ -29,7 +33,7 @@
           "bind \"-\"" = { Resize = "Decrease"; };
         };
         pane = {
-          "bind \"Ctrl p\"" = { SwitchToMode = "Normal"; };
+          "bind \"Alt p\"" = { SwitchToMode = "Normal"; };
           "bind \"h Left\"" = { MoveFocus = "Left"; };
           "bind \"l Right\"" = { MoveFocus = "Right"; };
           "bind \"j Down\"" = { MoveFocus = "Down"; };
@@ -55,7 +59,7 @@
           "bind \"l\" \"Right\"" = { MovePane = "Right"; };
         };
         tab = {
-          "bind \"Ctrl t\"" = { SwitchToMode = "Normal"; };
+          "bind \"Alt t\"" = { SwitchToMode = "Normal"; };
           "bind \"r\"" = { SwitchToMode = "RenameTab"; TabNameInput = 0; };
           "bind \"h\" \"Left\" \"Up\" \"k\"" = { GoToPreviousTab = []; };
           "bind \"l\" \"Right\" \"Down\" \"j\"" = { GoToNextTab = []; };
@@ -77,7 +81,7 @@
           "bind \"Tab\"" = { ToggleTab = []; };
         };
         scroll = {
-          "bind \"Ctrl s\"" = { SwitchToMode = "Normal"; };
+          "bind \"Alt s\"" = { SwitchToMode = "Normal"; };
           "bind \"e\"" = { EditScrollback = []; SwitchToMode = "Normal"; };
           "bind \"s\"" = { SwitchToMode = "EnterSearch"; SearchInput = 0; };
           "bind \"Ctrl c\"" = { ScrollToBottom = []; SwitchToMode = "Normal"; };
@@ -91,7 +95,7 @@
           # \"bind \"Alt c\"" = { Copy = []; };
         };
         search = {
-          "bind \"Ctrl s\"" = { SwitchToMode = "Normal"; };
+          "bind \"Alt s\"" = { SwitchToMode = "Normal"; };
           "bind \"Ctrl c\"" = { ScrollToBottom = []; SwitchToMode = "Normal"; };
           "bind \"j\" \"Down\"" = { ScrollDown = []; };
           "bind \"k\" \"Up\"" = { ScrollUp = []; };
@@ -119,7 +123,7 @@
         };
         session = {
           "bind \"Ctrl k\"" = { SwitchToMode = "Normal"; };
-          "bind \"Ctrl s\"" = { SwitchToMode = "Scroll"; };
+          "bind \"Alt s\"" = { SwitchToMode = "Scroll"; };
           "bind \"d\"" = { Detach = []; };
           "bind \"w\"" = {
             "LaunchOrFocusPlugin \"zellij:session-manager\"" = {
@@ -169,19 +173,19 @@
           "bind \"Enter\" \"Esc\"" = { SwitchToMode = "Normal"; };
         };
         "shared_except \"pane\" \"locked\"" = {
-          "bind \"Ctrl p\"" = { SwitchToMode = "Pane"; };
+          "bind \"Alt p\"" = { SwitchToMode = "Pane"; };
         };
         "shared_except \"resize\" \"locked\"" = {
           "bind \"Ctrl n\"" = { SwitchToMode = "Resize"; };
         };
         "shared_except \"scroll\" \"locked\"" = {
-          "bind \"Ctrl s\"" = { SwitchToMode = "Scroll"; };
+          "bind \"Alt s\"" = { SwitchToMode = "Scroll"; };
         };
         "shared_except \"session\" \"locked\"" = {
           "bind \"Ctrl k\"" = { SwitchToMode = "Session"; };
         };
         "shared_except \"tab\" \"locked\"" = {
-          "bind \"Ctrl t\"" = { SwitchToMode = "Tab"; };
+          "bind \"Alt t\"" = { SwitchToMode = "Tab"; };
         };
         "shared_except \"move\" \"locked\"" = {
           "bind \"Ctrl h\"" = { SwitchToMode = "Move"; };
