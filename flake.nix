@@ -12,9 +12,19 @@
     stylix.url = "github:danth/stylix";
     devenv.url = "github:cachix/devenv";
     helix.url = "github:helix-editor/helix";
+    zjstatus.url = "github:dj95/zjstatus";
   };
 
-  outputs = { nixpkgs, home-manager, darwin, nixpkgs-firefox-darwin, nur, stylix, devenv, ... }: {
+  outputs = {
+    home-manager,
+    darwin,
+    nixpkgs-firefox-darwin,
+    nur,
+    stylix,
+    devenv,
+    zjstatus,
+    ...
+  }: {
     darwinConfigurations.Kathleens-MacBook-Air = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [
@@ -23,7 +33,10 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          nixpkgs.overlays = [ nixpkgs-firefox-darwin.overlay ];
+          nixpkgs.overlays = [
+            nixpkgs-firefox-darwin.overlay
+            (final: prev: {zjstatus = zjstatus.packages.${prev.system}.default;})
+          ];
           home-manager.users.danbluhmhansen.imports = [
             ./home.nix
             ./zellij.nix
